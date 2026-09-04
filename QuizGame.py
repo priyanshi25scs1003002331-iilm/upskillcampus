@@ -39,3 +39,41 @@ for index, row in questions.iterrows():
       print("Correct answer:", row["Answer"])
       print()
       wrong_answers += 1
+
+total_questions = len(questions)
+
+percentage = (correct_answers / total_questions) * 100
+
+answer_data = np.array([correct_answers, wrong_answers])
+
+average_answers = np.mean(answer_data)
+maximum_answers = np.max(answer_data)
+minimum_answers = np.min(answer_data)
+
+print("========================================")
+print("             QUIZ RESULT")
+print("========================================")
+
+print("Student Name :", name)
+print("Total Questions :", total_questions)
+print("Correct Answers :", correct_answers)
+print("Wrong Answers :", wrong_answers)
+print("Score :", score, "/", total_questions)
+print("Percentage :", round(percentage, 2), "%")
+
+print("Average Answers :", round(average_answers, 2))
+print("Maximum Answers :", maximum_answers)
+print("Minimum Answers :", minimum_answers)
+
+if percentage >= 80:
+    performance = "Excellent"
+elif percentage >= 60:
+    performance = "Good"
+elif percentage >= 40:
+    performance = "Average"
+else:
+    performance = "Needs Improvement"
+
+print("Performance :", performance)
+
+print("========================================")
