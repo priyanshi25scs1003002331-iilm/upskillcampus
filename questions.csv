@@ -1,11 +1,31 @@
 Question,Option A,Option B,Option C,Option D,Answer,Topic
-Which language is used for data analysis?,Python,HTML,CSS,Java,A,Programming
-Which library is used for data manipulation in Python?,NumPy,Pandas,Flask,Tkinter,B,Python
-What does CPU stand for?,Central Processing Unit,Computer Personal Unit,Central Program Utility,Control Processing Unit,A,Computer
-Which library is mainly used for numerical computing?,Pandas,NumPy,Flask,Django,B,Python
-What is the extension of a Python file?,.java,.html,.py,.cpp,C,Programming
-Which keyword is used to define a function in Python?,function,define,def,fun,C,Python
-Which data type stores True or False?,String,Boolean,Integer,Float,B,Python
-Which symbol is used for comments in Python?,//,/* */,#,,C,Python
-Which company developed Python?,Microsoft,Google,Python Software Foundation,None of these,D,Programming
-Which function is used to display output in Python?,display(),print(),output(),show(),B,Python
+"Which keyword is used to define a function in Python?","func","define","def","function","C","Python"
+"Which symbol is used for comments in Python?","//","#","/*","--","B","Python"
+"Which data type stores True or False values?","int","str","bool","float","C","Python"
+"Which function is used to display output in Python?","input()","display()","print()","show()","C","Python"
+"Which file extension is commonly used for Python programs?",".java",".py",".cpp",".html","B","Python"
+"Which keyword is used to create a loop over a sequence?","repeat","for","loop","iterate","B","Python"
+"Which operator is used for exponentiation in Python?","^","**","//","%%","B","Python"
+"Which function is used to find the length of a list?","size()","count()","length()","len()","D","Python"
+"Which data structure stores key-value pairs in Python?","List","Tuple","Dictionary","Set","C","Python"
+"Which keyword is used to handle exceptions in Python?","catch","error","try","handle","C","Python"
+"Which library is mainly used for data manipulation in Python?","Pandas","Flask","Django","Tkinter","A","Pandas"
+"Which function is used to read a CSV file using Pandas?","pd.read()","pd.read_csv()","pd.csv()","pd.load_csv()","B","Pandas"
+"Which Pandas object represents a table with rows and columns?","Series","DataFrame","Array","Matrix","B","Pandas"
+"Which function displays the first few rows of a DataFrame?","head()","start()","first()","top()","A","Pandas"
+"Which function displays the last few rows of a DataFrame?","bottom()","end()","last()","tail()","D","Pandas"
+"Which attribute returns the number of rows and columns in a DataFrame?","size","shape","length","dimensions","B","Pandas"
+"Which function is used to remove missing values?","remove_null()","delete_na()","dropna()","remove_missing()","C","Pandas"
+"Which function is used to sort a DataFrame?","sort_values()","sort_data()","order()","arrange()","A","Pandas"
+"Which function is used to save a DataFrame as a CSV file?","save_csv()","to_csv()","write_csv()","export_csv()","B","Pandas"
+"Which Pandas function is commonly used to find unique values in a column?","unique()","different()","distinct()","values_only()","A","Pandas"
+"Which library is mainly used for numerical computing in Python?","Pandas","NumPy","Matplotlib","Flask","B","NumPy"
+"What is the standard alias used when importing NumPy?","np","num","numpyx","npy","A","NumPy"
+"Which function creates a NumPy array?","np.array()","np.create()","np.list()","np.make_array()","A","NumPy"
+"Which function calculates the average of an array?","np.average_value()","np.mean()","np.avg()","np.middle()","B","NumPy"
+"Which function returns the largest value in an array?","np.high()","np.maximum()","np.max()","np.large()","C","NumPy"
+"Which function returns the smallest value in an array?","np.low()","np.minimum()","np.min()","np.small()","C","NumPy"
+"Which function calculates the sum of array elements?","np.total()","np.add_all()","np.sum()","np.calculate()","C","NumPy"
+"Which function creates an array filled with zeros?","np.empty()","np.zero()","np.zeros()","np.null()","C","NumPy"
+"Which attribute gives the dimensions of a NumPy array?","dimension","shape","size","length","B","NumPy"
+"Which function generates evenly spaced numbers within a specified range?","np.range()","np.linspace()","np.space()","np.sequence()","B","NumPy"
