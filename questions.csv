@@ -1,0 +1,11 @@
+Question,Option A,Option B,Option C,Option D,Answer,Topic
+Which language is used for data analysis?,Python,HTML,CSS,Java,A,Programming
+Which library is used for data manipulation in Python?,NumPy,Pandas,Flask,Tkinter,B,Python
+What does CPU stand for?,Central Processing Unit,Computer Personal Unit,Central Program Utility,Control Processing Unit,A,Computer
+Which library is mainly used for numerical computing?,Pandas,NumPy,Flask,Django,B,Python
+What is the extension of a Python file?,.java,.html,.py,.cpp,C,Programming
+Which keyword is used to define a function in Python?,function,define,def,fun,C,Python
+Which data type stores True or False?,String,Boolean,Integer,Float,B,Python
+Which symbol is used for comments in Python?,//,/* */,#,,C,Python
+Which company developed Python?,Microsoft,Google,Python Software Foundation,None of these,D,Programming
+Which function is used to display output in Python?,display(),print(),output(),show(),B,Python
