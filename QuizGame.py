@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import os
 
 questions = pd.read_csv("questions.csv")
 
@@ -88,3 +89,22 @@ plt.xlabel("Answer Type")
 plt.ylabel("Number of Answers")
 
 plt.show()
+
+result = pd.DataFrame({
+    "Student Name": [name],
+    "Total Questions": [total_questions],
+    "Correct Answers": [correct_answers],
+    "Wrong Answers": [wrong_answers],
+    "Score": [score],
+    "Percentage": [round(percentage, 2)],
+    "Performance": [performance]
+})
+
+result.to_csv(
+    "results.csv",
+    mode="a",
+    index=False,
+    header=not os.path.exists("results.csv")
+)
+
+print("\nResult saved successfully to results.csv")
