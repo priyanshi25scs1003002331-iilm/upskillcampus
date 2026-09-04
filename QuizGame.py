@@ -157,7 +157,38 @@ def start_quiz():
 
     print("\nResult saved successfully to results.csv")
 
+# Function to analyze all quiz results
+def overall_performance():
 
+    if not os.path.exists("results.csv"):
+        print("\nNo quiz results found.")
+        return
+
+    results = pd.read_csv("results.csv")
+
+    print("\n========================================")
+    print("       OVERALL PERFORMANCE ANALYSIS")
+    print("========================================")
+
+    total_attempts = len(results)
+    average_score = np.mean(results["Score"])
+    highest_score = np.max(results["Score"])
+    lowest_score = np.min(results["Score"])
+    average_percentage = np.mean(results["Percentage"])
+
+    best_student = results.loc[
+        results["Score"].idxmax(), "Student Name"
+    ]
+
+    print("Total Attempts      :", total_attempts)
+    print("Average Score       :", round(average_score, 2))
+    print("Highest Score       :", highest_score)
+    print("Lowest Score        :", lowest_score)
+    print("Average Percentage  :", round(average_percentage, 2), "%")
+    print("Best Performing Student :", best_student)
+
+    print("========================================")
+    
 # Main menu
 while True:
 
@@ -165,7 +196,8 @@ while True:
     print("       QUIZ GAME & ANALYZER")
     print("========================================")
     print("1. Start Quiz")
-    print("2. Exit")
+    print("2. View Overall Performance")
+    print("3. Exit")
     print("========================================")
 
     choice = input("Enter your choice: ")
@@ -174,8 +206,11 @@ while True:
         start_quiz()
 
     elif choice == "2":
-        print("\nThank you for using the Quiz Game!")
-        break
+      overall_performance()
+
+    elif choice == "3":
+      print("\nThank you for using the Quiz Game!")
+      break
 
     else:
         print("\nInvalid choice! Please enter 1 or 2.")
