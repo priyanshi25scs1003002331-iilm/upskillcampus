@@ -3,14 +3,43 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os
 
+# Load quiz questions
 questions = pd.read_csv("questions.csv")
 
 
+# Function to start the quiz
 def start_quiz():
 
     score = 0
     correct_answers = 0
     wrong_answers = 0
+
+    # Get available topics
+    topics = questions["Topic"].unique()
+
+    print("\nAvailable Topics:")
+
+    for i, topic in enumerate(topics, start=1):
+        print(f"{i}. {topic}")
+
+    # Topic selection
+    while True:
+        try:
+            topic_choice = int(input("\nSelect a topic: "))
+
+            if 1 <= topic_choice <= len(topics):
+                selected_topic = topics[topic_choice - 1]
+                break
+
+            print("Invalid choice! Please select a valid topic.")
+
+        except ValueError:
+            print("Please enter a number.")
+
+    # Filter questions according to selected topic
+    selected_questions = questions[
+        questions["Topic"] == selected_topic
+    ].reset_index(drop=True)
 
     print("\n========================================")
     print("          PYTHON QUIZ GAME")
@@ -19,9 +48,11 @@ def start_quiz():
     name = input("Enter your name: ")
 
     print("\nWelcome,", name)
+    print("Topic:", selected_topic)
     print("Let's start the quiz!\n")
 
-    for index, row in questions.iterrows():
+    # Ask questions
+    for index, row in selected_questions.iterrows():
 
         print("Question", index + 1)
         print(row["Question"])
@@ -31,6 +62,7 @@ def start_quiz():
         print("C.", row["Option C"])
         print("D.", row["Option D"])
 
+        # Validate answer
         while True:
             answer = input("Your answer: ").upper()
 
@@ -39,6 +71,7 @@ def start_quiz():
 
             print("Invalid answer! Please enter A, B, C, or D.")
 
+        # Check answer
         if answer == row["Answer"]:
             print("Correct!\n")
             score += 1
@@ -50,16 +83,19 @@ def start_quiz():
             print()
             wrong_answers += 1
 
-    total_questions = len(questions)
+    # Calculate results
+    total_questions = len(selected_questions)
 
     percentage = (correct_answers / total_questions) * 100
 
+    # NumPy analysis
     answer_data = np.array([correct_answers, wrong_answers])
 
     average_answers = np.mean(answer_data)
     maximum_answers = np.max(answer_data)
     minimum_answers = np.min(answer_data)
 
+    # Performance classification
     if percentage >= 80:
         performance = "Excellent"
     elif percentage >= 60:
@@ -69,11 +105,13 @@ def start_quiz():
     else:
         performance = "Needs Improvement"
 
+    # Display result
     print("========================================")
     print("             QUIZ RESULT")
     print("========================================")
 
     print("Student Name :", name)
+    print("Topic :", selected_topic)
     print("Total Questions :", total_questions)
     print("Correct Answers :", correct_answers)
     print("Wrong Answers :", wrong_answers)
@@ -86,6 +124,7 @@ def start_quiz():
 
     print("========================================")
 
+    # Create performance graph
     categories = ["Correct", "Wrong"]
     values = [correct_answers, wrong_answers]
 
@@ -97,8 +136,10 @@ def start_quiz():
 
     plt.show()
 
+    # Save result using Pandas
     result = pd.DataFrame({
         "Student Name": [name],
+        "Topic": [selected_topic],
         "Total Questions": [total_questions],
         "Correct Answers": [correct_answers],
         "Wrong Answers": [wrong_answers],
@@ -117,6 +158,7 @@ def start_quiz():
     print("\nResult saved successfully to results.csv")
 
 
+# Main menu
 while True:
 
     print("\n========================================")
