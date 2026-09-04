@@ -77,3 +77,14 @@ else:
 print("Performance :", performance)
 
 print("========================================")
+
+categories = ["Correct", "Wrong"]
+values = [correct_answers, wrong_answers]
+
+plt.bar(categories, values)
+
+plt.title("Quiz Performance")
+plt.xlabel("Answer Type")
+plt.ylabel("Number of Answers")
+
+plt.show()
