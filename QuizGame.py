@@ -12,3 +12,30 @@ name = input("Enter your name: ")
 
 print("\nWelcome,", name)
 print("Let's start the quiz!\n")
+
+score = 0
+correct_answers = 0
+wrong_answers = 0
+
+for index, row in questions.iterrows():
+
+  print("Question", index + 1)
+  print(row["Question"])
+
+  print("A.", row["Option A"])
+  print("B.", row["Option B"])
+  print("C.", row["Option C"])
+  print("D.", row["Option D"])
+
+  answer = input("Your answer: ").upper()
+
+  if answer == row["Answer"]:
+      print("Correct!\n")
+      score += 1
+      correct_answers += 1
+
+  else:
+      print("Wrong!")
+      print("Correct answer:", row["Answer"])
+      print()
+      wrong_answers += 1
